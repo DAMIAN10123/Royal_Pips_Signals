@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Pips Signals — Professional Forex Trading Signals</title>
+    <title>Royal Pips Forex Community — Professional Forex Trading</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -38,8 +38,8 @@
             line-height: 1.6;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Header Section */
+        .header {
             position: relative;
             min-height: 100vh;
             display: flex;
@@ -51,6 +51,7 @@
                 radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
                 linear-gradient(135deg, var(--primary-dark) 0%, #111 100%);
+            padding: 0 20px;
         }
 
         .chart-background {
@@ -63,15 +64,14 @@
             opacity: 0.3;
         }
 
-        .hero-content {
+        .header-content {
             text-align: center;
             z-index: 2;
-            max-width: 900px;
-            padding: 0 20px;
+            max-width: 800px;
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-badge {
+        .header-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -85,15 +85,15 @@
             backdrop-filter: blur(10px);
         }
 
-        .hero-badge i {
+        .header-badge i {
             font-size: 1rem;
         }
 
-        .hero h1 {
+        .header h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background: linear-gradient(135deg, var(--text-light) 0%, var(--secondary-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -101,24 +101,24 @@
             line-height: 1.1;
         }
 
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
+        .header p {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 40px;
             color: var(--text-gray);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .mega-cta {
+        .header-cta {
             position: relative;
             display: inline-flex;
             align-items: center;
             gap: 15px;
-            padding: 22px 50px;
+            padding: 20px 40px;
             background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
             color: var(--text-light);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             border: none;
             border-radius: 50px;
@@ -128,11 +128,11 @@
             box-shadow: 
                 0 10px 30px rgba(59, 130, 246, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            animation: megaPulse 2s infinite;
+            animation: pulse 2s infinite;
             overflow: hidden;
         }
 
-        .mega-cta::before {
+        .header-cta::before {
             content: '';
             position: absolute;
             top: 0;
@@ -143,43 +143,24 @@
             transition: left 0.6s;
         }
 
-        .mega-cta:hover::before {
+        .header-cta:hover::before {
             left: 100%;
         }
 
-        .mega-cta:hover {
+        .header-cta:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 
                 0 20px 40px rgba(59, 130, 246, 0.6),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
-        .mega-cta .cta-icon {
+        .header-cta .cta-icon {
             display: inline-block;
             font-size: 1.5rem;
             animation: bounce 2s infinite;
         }
 
-        .cta-subtext {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: var(--accent-green);
-            font-weight: 500;
-            padding: 12px 25px;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 12px;
-            display: inline-block;
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .cta-subtext i {
-            margin-right: 8px;
-            color: var(--accent-green);
-        }
-
-        @keyframes megaPulse {
+        @keyframes pulse {
             0%, 100% { 
                 box-shadow: 
                     0 10px 30px rgba(59, 130, 246, 0.4),
@@ -228,6 +209,990 @@
             font-size: 2.5rem;
             animation-delay: 5s;
         }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            font-size: 1.8rem;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(-5deg); }
+            75% { transform: translateY(20px) rotate(3deg); }
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+            border-radius: 2px;
+        }
+
+        /* Why Join Section */
+        .why-join-section {
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: var(--secondary-blue);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--secondary-blue);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .benefit-description {
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 70%),
+                linear-gradient(135deg, #111 0%, #0a0a0a 100%);
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+        }
+
+        .testimonial-content {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .author-title {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Telegram Preview Section */
+        .telegram-preview-section {
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+        }
+
+        .telegram-preview-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .telegram-preview {
+            background: rgba(30, 58, 138, 0.2);
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .telegram-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+        }
+
+        .telegram-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+
+        .telegram-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .telegram-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .telegram-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            filter: blur(2px);
+            transition: all 0.3s ease;
+        }
+
+        .message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-blue), #60a5fa);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .message:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .message-time {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+        }
+
+        .message-content {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .message-signal {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+
+        .signal-badge {
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .signal-badge.buy {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .signal-badge.sell {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .message-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .message-pair {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .message-price {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            padding: 60px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+            border-color: var(--secondary-blue);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question i {
+            color: var(--secondary-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 20px;
+            max-height: 200px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 30px rgba(59, 130, 246, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: pulse 2s infinite;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(59, 130, 246, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button .cta-icon {
+            display: inline-block;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .disclaimer-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .footer-description {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-contact {
+            color: var(--secondary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-copyright {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-blue), #60a5fa);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            .header-cta {
+                padding: 18px 35px;
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .benefit-card {
+                padding: 30px 20px;
+            }
+
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+
+            .telegram-preview {
+                padding: 30px 20px;
+            }
+
+            .faq-question {
+                font-size: 1.1rem;
+                padding: 20px;
+            }
+
+            .faq-answer {
+                font-size: 1rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header">
+        <canvas class="chart-background" id="chartCanvas"></canvas>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element">📈</div>
+        <div class="floating-element">💰</div>
+        <div class="floating-element">📊</div>
+        
+        <div class="header-content">
+            <div class="header-badge">
+                <i class="fas fa-check-circle"></i>
+                <span>100% FREE - No Payment Required</span>
+            </div>
+            <h1>Master Forex Trading With Expert Guidance</h1>
+            <p>Join our community of traders and learn professional strategies without the guesswork. Perfect for beginners and experienced traders alike.</p>
+            <a href="https://t.me/royal_pips_signals" target="_blank" class="header-cta">
+                <span class="cta-icon">🚀</span>
+                Join Free on Telegram
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="why-join-section">
+        <div class="container">
+            <h2 class="section-title">Why Join Royal Pips Community</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3 class="benefit-title">Educational Content</h3>
+                    <p class="benefit-description">Access daily market analysis, trading strategies, and educational resources designed to improve your trading skills.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3 class="benefit-title">Supportive Community</h3>
+                    <p class="benefit-description">Connect with traders worldwide, share experiences, and get answers to your questions in real-time.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Practical Insights</h3>
+                    <p class="benefit-description">Receive actionable trade ideas with clear entry and exit points you can practice on your demo account.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🆓</div>
+                    <h3 class="benefit-title">Completely Free</h3>
+                    <p class="benefit-description">No hidden fees, premium tiers, or upsells. All our resources and community access are 100% free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Traders Say</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"The educational value in this community is exceptional. I've learned more in 3 months than in years of trying to trade on my own."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53);">AM</div>
+                        <div class="author-info">
+                            <div class="author-name">Alexandra Mitchell</div>
+                            <div class="author-title">Community Member</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-content">"Finally found a trading community that focuses on education rather than hype. The analysis is clear and the support is amazing."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #4ECDC4, #44A08D);">MT</div>
+                        <div class="author-info">
+                            <div class="author-name">Marcus Thompson</div>
+                            <div class="author-title">Community Member</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telegram Preview Section -->
+    <section class="telegram-preview-section">
+        <div class="container">
+            <h2 class="section-title">See What's Inside Our Telegram</h2>
+            
+            <div class="telegram-preview-container">
+                <div class="telegram-preview">
+                    <div class="telegram-header">
+                        <div class="telegram-icon">👑</div>
+                        <div class="telegram-title">Royal Pips Community</div>
+                    </div>
+                    
+                    <div class="telegram-messages">
+                        <div class="message">
+                            <div class="message-time">10:30 AM</div>
+                            <div class="message-content">
+                                <div class="message-signal">
+                                    <span class="signal-badge buy">BUY</span>
+                                    <div class="message-details">
+                                        <div class="message-pair">EUR/USD</div>
+                                        <div class="message-price">Entry: 1.0850</div>
+                                        <div class="message-price">SL: 1.0820</div>
+                                        <div class="message-price">TP: 1.0950</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="message">
+                            <div class="message-time">10:45 AM</div>
+                            <div class="message-content">
+                                <div class="message-signal">
+                                    <span class="signal-badge sell">SELL</span>
+                                    <div class="message-details">
+                                        <div class="message-pair">GBP/JPY</div>
+                                        <div class="message-price">Entry: 150.20</div>
+                                        <div class="message-price">SL: 151.80</div>
+                                        <div class="message-price">TP: 148.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this a paid group?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No. Joining the community is completely free with no hidden costs or premium tiers.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need experience?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Not at all. Everything is beginner-friendly and explained in simple terms.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will I get analysis I can try on demo?</span>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes — we share simple trade insights you can practice on your demo account before risking real capital.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Improve Your Trading?</h2>
+                <p class="cta-subtitle">Join thousands of traders who are learning and growing together.</p>
+                <a href="https://t.me/royal_pips_signals" target="_blank" class="cta-button">
+                    <span class="cta-icon">👉</span>
+                    Join Free on Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="disclaimer">
+        <div class="container">
+            <div class="disclaimer-content">
+                <p>Royal Pips Signals shares educational trade ideas only. Trading involves risk; always trade responsibly. We are not financial advisors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">Royal Pips Community © 2025</div>
+            <div class="footer-description">Educational & Community-Based Support</div>
+            <div class="footer-contact">Telegram: @royal_pips_signals</div>
+            <div class="footer-copyright">All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Chart Background - Static Design
+        const canvas = document.getElementById('chartCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawStaticChart();
+        }
+        
+        function drawStaticChart() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Create a grid of small candlesticks
+            const candleWidth = 15;
+            const candleSpacing = 40;
+            const rows = 5;
+            const cols = Math.floor(canvas.width / candleSpacing);
+            
+            for (let row = 0; row < rows; row++) {
+                for (let col = 0; col < cols; col++) {
+                    const x = col * candleSpacing + 20;
+                    const y = (row + 1) * (canvas.height / (rows + 1));
+                    
+                    // Random height for variety
+                    const height = 30 + Math.random() * 40;
+                    const isGreen = Math.random() > 0.5;
+                    
+                    // Draw wick
+                    ctx.beginPath();
+                    ctx.moveTo(x, y - height/2 - 10);
+                    ctx.lineTo(x, y + height/2 + 10);
+                    ctx.strokeStyle = isGreen ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    
+                    // Draw body
+                    ctx.fillStyle = isGreen ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)';
+                    ctx.fillRect(x - candleWidth/2, y - height/2, candleWidth, height);
+                }
+            }
+            
+            // Add some floating chart elements
+            for (let i = 0; i < 20; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const radius = 1 + Math.random() * 2;
+                
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(59, 130, 246, ${0.1 + Math.random() * 0.2})`;
+                ctx.fill();
+            }
+            
+            // Add trend lines
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height * 0.3);
+            ctx.bezierCurveTo(
+                canvas.width * 0.25, canvas.height * 0.2,
+                canvas.width * 0.75, canvas.height * 0.4,
+                canvas.width, canvas.height * 0.3
+            );
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height * 0.7);
+            ctx.bezierCurveTo(
+                canvas.width * 0.25, canvas.height * 0.6,
+                canvas.width * 0.75, canvas.height * 0.8,
+                canvas.width, canvas.height * 0.7
+            );
+            ctx.strokeStyle = 'rgba(147, 51, 234, 0.2)';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Enhanced CTA button glow effect
+        const headerCta = document.querySelector('.header-cta');
+        const ctaButton = document.querySelector('.cta-button');
+        
+        setInterval(() => {
+            headerCta.style.boxShadow = '0 20px 50px rgba(59, 130, 246, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+            ctaButton.style.boxShadow = '0 20px 50px rgba(59, 130, 246, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+            setTimeout(() => {
+                headerCta.style.boxShadow = '0 10px 30px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+                ctaButton.style.boxShadow = '0 10px 30px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+            }, 1500);
+        }, 4000);
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
         .floating-element:nth-child(3) {
             bottom: 20%;
